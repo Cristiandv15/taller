@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Vehiculos</h1>
+  <a href="{% url 'taller:vehiculo-create' %}"> Crear Vehiculo </a>
+  {% for vehiculo in vehiculos%}
+        <p> Vehiculos: {{ vehiculo.mark }} {{ vehiculo.model }} {{ vehiculo.patent }} <a href="{% url 'taller:vehiculo-delete' vehiculo.id  %}">Eliminar</a> - <a href="{% url 'taller:vehiculo-update' vehiculo.id  %}"> Update</a>  </p>
+        </br>
+  {% endfor %}
+  <a href="{% url 'home' %}"> Home</a>  
+</body>
+
+</html>
